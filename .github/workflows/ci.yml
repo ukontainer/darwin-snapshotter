@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  checks:
+    name: Project Checks
+    runs-on: ubuntu-18.04
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/setup-go@v2
+        with:
+          go-version: 1.17.2
+
+      - name: Set env
+        shell: bash
+        run: |
+          echo "GOPATH=${{ github.workspace }}" >> $GITHUB_ENV
+          echo "${{ github.workspace }}/bin" >> $GITHUB_PATH
+
+      - uses: actions/checkout@v2
+        with:
+          path: src/github.com/ucontainer/darwin-snapshotter
+          fetch-depth: 25
+
+      - uses: containerd/project-checks@v1
+        with:
+          working-directory: src/github.com/ucontainer/darwin-snapshotter
+
+  linters:
+    name: Linters
+    runs-on: macos-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: src/github.com/ucontainer/darwin-snapshotter
+
+      - name: Set env
+        shell: bash
+        run: |
+          echo "GOPATH=${{ github.workspace }}" >> $GITHUB_ENV
+          echo "${{ github.workspace }}/bin" >> $GITHUB_PATH
+
+      - uses: golangci/golangci-lint-action@v2
+        with:
+          version: v1.42.0
+          working-directory: src/github.com/ucontainer/darwin-snapshotter
+
+  tests:
+    name: Tests
+    runs-on: macos-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: src/github.com/ucontainer/darwin-snapshotter
+
+      - uses: actions/setup-go@v2
+        with:
+          go-version: 1.17.2
+
+      - name: Set env
+        shell: bash
+        run: |
+          echo "GOPATH=${{ github.workspace }}" >> $GITHUB_ENV
+          echo "${{ github.workspace }}/bin" >> $GITHUB_PATH
+
+      - run: |
+          sudo -E TMPDIR=/tmp/ go test -v -test.root
+        working-directory: src/github.com/ucontainer/darwin-snapshotter
