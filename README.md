@@ -18,3 +18,12 @@ $ go build ./cmd/containerd-darwin-snapshotter-grpc
 ```console
 $ ./containerd-darwin-snapshotter-grpc /var/run/containerd-darwin-snapshotter.sock /var/lib/containerd/darwin
 ```
+
+containerd has to be also configured to utilize this snapshotter.  Below is an example configuration to add the snapshotter.
+
+```
+[proxy_plugins]
+  [proxy_plugins.darwin]
+    type = "snapshot"
+    address = "/tmp/ctrd/run/containerd-darwin-snapshotter.sock"
+```
