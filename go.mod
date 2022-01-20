@@ -2,7 +2,7 @@ module github.com/ukontainer/darwin-snapshotter
 
 go 1.17
 
-replace github.com/containerd/containerd => github.com/ukontainer/containerd v1.5.1-0.20220120004046-70de1908e508
+replace github.com/containerd/containerd => github.com/ukontainer/containerd v1.5.1-0.20220120005025-46570b3083de
 
 require (
 	github.com/containerd/containerd v1.5.8

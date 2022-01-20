@@ -566,8 +566,8 @@ github.com/tmc/grpc-websocket-proxy v0.0.0-20190109142713-0ad062ec5ee5/go.mod h1
 github.com/tmc/grpc-websocket-proxy v0.0.0-20201229170055-e5319fda7802/go.mod h1:ncp9v5uamzpCO7NfCPTXjqaC+bZgJeR0sMTm6dMHP7U=
 github.com/tv42/httpunix v0.0.0-20191220191345-2ba4b9c3382c/go.mod h1:hzIxponao9Kjc7aWznkXaL4U4TWaDSs8zcsY4Ka08nM=
 github.com/ugorji/go v1.1.4/go.mod h1:uQMGLiO92mf5W77hV/PUCpI3pbzQx3CRekS0kk+RGrc=
-github.com/ukontainer/containerd v1.5.1-0.20220120004046-70de1908e508 h1:8KROfQA9MxxTn0xjEVT/5BggIEP0VlgXKgKRhEkbeYg=
-github.com/ukontainer/containerd v1.5.1-0.20220120004046-70de1908e508/go.mod h1:jdeOXdXovU4bWF2Bd2hJjqpcOrrpSC1wmFCTtf6LD+A=
+github.com/ukontainer/containerd v1.5.1-0.20220120005025-46570b3083de h1:sGrSXGCQjgxE7gK14hCmV0MvZy1Jy6xsvg+1AMD5mRY=
+github.com/ukontainer/containerd v1.5.1-0.20220120005025-46570b3083de/go.mod h1:jdeOXdXovU4bWF2Bd2hJjqpcOrrpSC1wmFCTtf6LD+A=
 github.com/urfave/cli v1.22.1/go.mod h1:Gos4lmkARVdJ6EkW0WaNv/tZAAMe9V7XWyB60NtXRu0=
 github.com/urfave/cli v1.22.2/go.mod h1:Gos4lmkARVdJ6EkW0WaNv/tZAAMe9V7XWyB60NtXRu0=
 github.com/vishvananda/netlink v1.1.0/go.mod h1:cTgwzPIzzgDAYoQrMm0EdrjRUBkTqKYppBueQtXaqoE=

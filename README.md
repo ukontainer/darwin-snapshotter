@@ -10,6 +10,7 @@ But with this snapshotter, the mount package of containerd doesn't depend on bin
 
 ```console
 $ go build ./cmd/containerd-darwin-snapshotter-grpc
+$ go build ./cmd/mount_containerd_darwin
 ```
 
 

@@ -75,6 +75,16 @@ jobs:
           echo "GOPATH=${{ github.workspace }}" >> $GITHUB_ENV
           echo "${{ github.workspace }}/bin" >> $GITHUB_PATH
 
+      - name: build
+        working-directory: src/github.com/ucontainer/darwin-snapshotter
+        shell: bash
+        run: |
+          go build ./cmd/mount_containerd_darwin
+          go build ./cmd/containerd-darwin-snapshotter-grpc
+          mkdir -p ${{ github.workspace }}/bin/
+          cp mount_containerd_darwin ${{ github.workspace }}/bin/
+          cp containerd-darwin-snapshotter-grpc ${{ github.workspace }}/bin/
+
       - run: |
-          sudo -E TMPDIR=/tmp/ go test -v -test.root
+          sudo -E PATH=$PATH TMPDIR=/tmp/ go test -v -test.root
         working-directory: src/github.com/ucontainer/darwin-snapshotter
