@@ -53,7 +53,7 @@ func main() {
 		}
 
 		if err := hdiu.AttachSparseBundle(target, source, options); err != nil {
-			fmt.Printf("failed to mount\n")
+			fmt.Printf("%s: failed to mount\n", os.Args[0])
 			os.Exit(1)
 		}
 	case "unmount":
@@ -64,7 +64,7 @@ func main() {
 		}
 
 		if err := hdiu.DetachSparseBundle(target, flags); err != nil {
-			fmt.Printf("failed to unmount\n")
+			fmt.Printf("%s: failed to unmount\n", os.Args[0])
 			os.Exit(1)
 		}
 	default:

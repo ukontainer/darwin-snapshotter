@@ -2,18 +2,17 @@ module github.com/ukontainer/darwin-snapshotter
 
 go 1.17
 
-replace github.com/containerd/containerd => github.com/ukontainer/containerd v1.5.1-0.20220119015353-899e65fdea0f
+replace github.com/containerd/containerd => github.com/ukontainer/containerd v1.5.1-0.20220120004046-70de1908e508
 
 require (
-	github.com/containerd/containerd v1.6.0-rc.0
-	github.com/containerd/containerd/api v1.6.0-beta.3
+	github.com/containerd/containerd v1.5.8
 	github.com/containerd/continuity v0.2.2
 	google.golang.org/grpc v1.43.0
 )
 
 require (
 	github.com/Microsoft/go-winio v0.5.1 // indirect
-	github.com/Microsoft/hcsshim v0.9.1 // indirect
+	github.com/Microsoft/hcsshim v0.9.2 // indirect
 	github.com/containerd/cgroups v1.0.2 // indirect
 	github.com/containerd/ttrpc v1.1.0 // indirect
 	github.com/containerd/typeurl v1.0.2 // indirect
