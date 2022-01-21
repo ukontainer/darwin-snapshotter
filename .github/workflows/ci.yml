@@ -86,5 +86,5 @@ jobs:
           cp containerd-darwin-snapshotter-grpc ${{ github.workspace }}/bin/
 
       - run: |
-          sudo -E PATH=$PATH TMPDIR=/tmp/ go test -v -test.root
+          sudo -E PATH=$PATH TMPDIR=/tmp/ go test -v -test.root ./...
         working-directory: src/github.com/ucontainer/darwin-snapshotter
